@@ -1,7 +1,8 @@
 ## My Household
 
 ### Description
-My Household application provides access to personal data. It is also possible to generate reports containing the amount of parents to the amount of children ratio.
+My Household provides RESTful resources for accessing information about a household with persons, children, meals, etc.
+It is also possible to get the amount of parents to the amount of children ratio.
 
 ### Implementation
 The application is implemented following the Domain Driven Design as a showcase how a project can be structured in a way to be easily maintainable and extendable with layer isolation. 
@@ -13,13 +14,18 @@ The project consists of the following layers:
 * infrastructure - contains interfaces to the outer world. If the data source is changed, it will not affect the other layers.
 
 ### Setting up the database
+Go to the following directory:
+
+```
+/{projectDirectory}/docker
+```
 Download the following
 [MySQL dump](https://drive.google.com/file/d/1toUEFeBSV6Kp2pfRlCRxhegOHxaaaQla/view?usp=sharing)
-and place it in the directory where the application is checked out.
-Go to the root of the application and execute the following command:
+and place it there. Then execute the following command:
 ```
-docker compose -f ./docker/docker-compose.yaml up
+docker-compose up
 ```
+Have in mind that importing the SQL dump might take a while.
 
 ### Running the application with Maven
 You can start the application by running:
@@ -35,12 +41,18 @@ Then start the application by running:
 ```
 docker run -p 8080:8080 wagawin/my-household
 ```
+### Running the tests
+Have in mind that it is required to have a configured and running database for the load tests. You can run the tests with the following command:
+```
+./mvnw clean verify
+```
+
 ### Documentation
 After starting the application the documentation can be found here:
 
-[http://localhost:8080/swagger-ui.html]()
+[http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
 
 ### Improvements
 The following improvements can be done:
 * more tests - unit, integration and load testing
-* the existing load tests to be independent of the database e.g to use a MySQL testcontainer
+* an isolated MySQL server used only in the load tests e.g. with testcontainers.

@@ -4,8 +4,6 @@ import com.wagawin.myhousehold.domain.child.ChildService;
 import com.wagawin.myhousehold.domain.child.model.Child;
 import com.wagawin.myhousehold.domain.child.model.Daughter;
 import com.wagawin.myhousehold.domain.child.model.Meal;
-import com.wagawin.myhousehold.domain.person.model.House;
-import com.wagawin.myhousehold.domain.person.model.HouseType;
 import com.wagawin.myhousehold.domain.person.model.Person;
 import jakarta.persistence.EntityNotFoundException;
 import org.junit.jupiter.api.Test;

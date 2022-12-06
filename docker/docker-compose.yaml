@@ -8,4 +8,4 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: my_household_db
     volumes:
-      - "../../my_household_db.sql:/docker-entrypoint-initdb.d/init.sql"
+      - "./my_household_db.sql:/docker-entrypoint-initdb.d/init.sql"
