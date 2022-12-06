@@ -16,7 +16,7 @@ import java.time.Duration;
 import static com.wagawin.myhousehold.application.person.PersonController.V1_PERSONS_URL;
 
 @ActiveProfiles("performance")
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class PersonControllerLoadTest {
 
     private static final String URL = "http://localhost:8080" + V1_PERSONS_URL;

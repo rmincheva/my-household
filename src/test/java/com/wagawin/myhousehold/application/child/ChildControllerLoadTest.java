@@ -16,7 +16,7 @@ import java.time.Duration;
 import static com.wagawin.myhousehold.application.child.ChildController.V1_CHILDREN_URL;
 
 @ActiveProfiles("performance")
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class ChildControllerLoadTest {
 
     private static final String URL = "http://localhost:8080" + V1_CHILDREN_URL;
